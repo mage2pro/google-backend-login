@@ -16,6 +16,16 @@ require(['jquery'], function($) {
 				 * Дальше надо авторизоваться в админке:
 				 * https://developers.google.com/identity/sign-in/web/backend-auth
 				 */
+				$.post(BASE_URL + 'df-login/google/', {
+					token: user.getAuthResponse().id_token, form_key: FORM_KEY
+				}, function(response) {
+					if (response.success) {
+						window.location.href = BASE_URL;
+					}
+					else {
+						console.log('не в этот раз...');
+					}
+				});
 			}
 			,'onfailure': function() {}
 		});
