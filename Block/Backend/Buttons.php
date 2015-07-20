@@ -11,8 +11,8 @@ class Buttons extends \Magento\Backend\Block\Template {
 		,\Magento\Framework\View\Page\Config $pageConfig
 		,\Magento\Framework\App\Config\ScopeConfigInterface $config
 	) {
-		$pageConfig->setMetadata(
-			'google-signin-client_id', $config->getValue('df_login/google/client_id')
+		$pageConfig->setMetadata('google-signin-client_id',
+			$config->getValue('df_login/google/client_id')
 		);
 		parent::__construct($context);
 	}
