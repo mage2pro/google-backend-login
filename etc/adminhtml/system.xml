@@ -1,0 +1,55 @@
+<?xml version='1.0'?>
+<config
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xsi:noNamespaceSchemaLocation='../../../../Magento/Config/etc/system_file.xsd'
+>
+    <system>
+        <!--
+            2015-07-10
+            Минимальная длина идентификатора tab — 3 символа:
+            https://github.com/magento/magento2/blob/1.0.0-beta/app/code/Magento/Config/etc/system_file.xsd#L405
+            Поэтому ставим символ подчёркивания вначале.
+        -->
+        <tab id='_df' translate='label' sortOrder='-100'>
+            <label>Mage2.PRO</label>
+        </tab>
+        <section
+            id='df_login'
+            translate='label'
+            type='text'
+            sortOrder='100'
+            showInDefault='1'
+            showInWebsite='1'
+            showInStore='1'
+        >
+            <tab>_df</tab>
+            <label>Login</label>
+            <class>separator-top</class>
+            <resource>Df_Login::config</resource>
+            <group
+                id='google'
+                translate='label'
+                type='text'
+                sortOrder='100'
+                showInDefault='1'
+                showInWebsite='1'
+                showInStore='1'
+            >
+                <label>Login with Google Account</label>
+                <field
+                    id='hide_decimals'
+                    translate='label'
+                    type='select'
+                    sortOrder='2'
+                    showInDefault='1'
+                    showInWebsite='1'
+                    showInStore='1'
+                >
+                    <label>Enable?</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[]]></comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
