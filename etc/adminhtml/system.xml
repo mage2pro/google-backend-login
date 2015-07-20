@@ -35,12 +35,12 @@
                 showInWebsite='1'
                 showInStore='1'
             >
-                <label>Login with Google Account</label>
+                <label>Google OAuth 2.0</label>
                 <field
-                    id='hide_decimals'
+                    id='enable'
                     translate='label'
                     type='select'
-                    sortOrder='2'
+                    sortOrder='1'
                     showInDefault='1'
                     showInWebsite='1'
                     showInStore='1'
@@ -48,6 +48,33 @@
                     <label>Enable?</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                     <comment><![CDATA[]]></comment>
+                </field>
+                <field
+                    id='client_id'
+                    translate='label'
+                    type='text'
+                    sortOrder='2'
+                    showInDefault='1'
+                    showInWebsite='1'
+                    showInStore='1'
+                >
+                    <label>Client ID</label>
+                    <comment><![CDATA[]]></comment>
+                    <depends><field id='enable'>1</field></depends>
+                </field>
+                <field
+                    id='client_secret'
+                    translate='label'
+                    type='obscure'
+                    sortOrder='3'
+                    showInDefault='1'
+                    showInWebsite='1'
+                    showInStore='1'
+                >
+                    <label>Client secret</label>
+                    <comment><![CDATA[]]></comment>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                    <depends><field id='enable'>1</field></depends>
                 </field>
             </group>
         </section>
