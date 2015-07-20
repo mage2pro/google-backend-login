@@ -3,10 +3,6 @@
 	xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' 
 	layout='admin-login' xsi:noNamespaceSchemaLocation='../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd'>
 	<head>
-		<meta
-			name='google-signin-client_id'
-			content='763363234136-0dccnnjlft4osufmii57b5ire2jncl9j.apps.googleusercontent.com
-		'/>
 		<link src='Df_Login::main.js'/>
 		<css src='Df_Login::main.css'/>
 	</head>
