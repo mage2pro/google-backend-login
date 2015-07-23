@@ -17,8 +17,10 @@ require(['jquery'], function($) {
 				 * https://developers.google.com/identity/sign-in/web/backend-auth
 				 */
 				//console.log('страница обновилась');
-				/*$.post(BASE_URL + 'dfLogin/google/', {
-					token: user.getAuthResponse().id_token, form_key: FORM_KEY
+				$.post(BASE_URL + 'dfLogin/google/', {
+					token: user.getAuthResponse().id_token
+					, form_key: FORM_KEY
+					, 'df-login-google': true
 				}, function(response) {
 					if (response.success) {
 						console.log('авторизован :-)');
@@ -27,7 +29,7 @@ require(['jquery'], function($) {
 					else {
 						console.log('не в этот раз...');
 					}
-				});  */
+				});
 			}
 			,'onfailure': function() {}
 		});

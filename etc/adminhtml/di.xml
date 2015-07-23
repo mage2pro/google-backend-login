@@ -1,0 +1,22 @@
+<?xml version='1.0'?>
+<config
+	xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+	xsi:noNamespaceSchemaLocation='../../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd'
+>
+	<!--
+		2015-07-23
+		Цель плагина —
+		авторизация в административной части посредством OAuth.
+		Обратите внимание, что в ядре Magento уже есть плагин для данного класса:
+		app/code/Magento/Backend/etc/adminhtml/di.xml
+		Он выполняет стандартную авторизацию в административной части и имеет вес 100.
+		Наш же имеет вес 99 и выполняется раньше стандартного.
+	-->
+	<type name='Magento\Backend\App\AbstractAction'>
+		<plugin
+			name='Df\Login\Backend\AbstractActionPlugin'
+			type='Df\Login\Backend\AbstractActionPlugin'
+			sortOrder='99'
+		/>
+ </type>
+</config>
