@@ -14,7 +14,7 @@
             <label>Mage2.PRO</label>
         </tab>
         <section
-            id='df_login'
+            id='dfe_login'
             translate='label'
             type='text'
             sortOrder='100'
@@ -25,7 +25,7 @@
             <tab>_df</tab>
             <label>Login</label>
             <class>separator-top</class>
-            <resource>Df_Login::config</resource>
+            <resource>Dfe_Login::config</resource>
             <group
                 id='google'
                 translate='label'

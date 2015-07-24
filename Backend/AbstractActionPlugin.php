@@ -1,16 +1,11 @@
 <?php
-namespace Df\Login\Backend;
+namespace Dfe\Login\Backend;
 class AbstractActionPlugin {
 	/**
-	 * @param \Magento\Backend\Model\Auth $auth
-	 * @param \Magento\Framework\Data\Collection\ModelFactory $modelFactory
+	 * @param \Df\Backend\Model\Auth $auth
 	 */
-	public function __construct(
-		\Magento\Backend\Model\Auth $auth
-		,\Magento\Framework\Data\Collection\ModelFactory $modelFactory
-	) {
+	public function __construct(\Df\Backend\Model\Auth $auth) {
 		$this->_auth = $auth;
-		$this->_modelFactory = $modelFactory;
 	}
 
 	/**
@@ -29,25 +24,34 @@ class AbstractActionPlugin {
 		\Magento\Backend\App\AbstractAction $subject
 		,\Magento\Framework\App\RequestInterface $request
 	) {
+		rm_log(__METHOD__);
+		rm_log('***********************************************************');
+		rm_log(df_current_url());
+		rm_log('***********************************************************');
+		rm_log($_COOKIE);
 		/** @var bool|null $isOAuthLogin */
 		$isOAuthLogin = $request->getParam('df-login-google');
 		/** @var string|null $token */
 		$token = $request->getParam('token');
+		rm_log('df-login-google: ' . intval($isOAuthLogin));
 		if ($isOAuthLogin && $token && !$this->_auth->isLoggedIn()) {
+			rm_log('trying login by Google...');
+			rm_log('df-login-google: ' . intval($isOAuthLogin));
 			/** @link https://developers.google.com/identity/sign-in/web/backend-auth */
 			/** @var string $json */
 			$json = file_get_contents("https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=$token");
+			rm_log($json);
 			if ($json) {
 				$googleResponse = json_decode($json, $assoc = true);
 				if ($googleResponse) {
 					/** @var string $email */
 					$email = df_a($googleResponse, 'email');
 					if ($email) {
+						$this->_auth->loginByEmail($email);
 					}
 				}
 			}
 		}
-		rm_log(__METHOD__);
 		return array($request);
 	}
 }

@@ -1,10 +1,10 @@
 {
-	"name": "df/login"
+	"name": "dfe/login"
 	,"type": "magento2-module"
 	,"require": {
 		"php": ">=5.5.0"
 		,"magento/framework": ">=0.74.0-beta16"
 		,"magento/magento-composer-installer": "*"
 	},
-	"extra": {"map": [["*", "Df/Login"]]}
+	"extra": {"map": [["*", "Dfe/Login"]]}
 }

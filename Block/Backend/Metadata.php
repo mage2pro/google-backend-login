@@ -1,18 +1,18 @@
 <?php
-namespace Df\Login\Block\Backend;
-class Buttons extends \Magento\Backend\Block\Template {
+namespace Dfe\Login\Block\Backend;
+class Metadata extends \Magento\Backend\Block\AbstractBlock {
 	/**
-	 * @param \Magento\Backend\Block\Template\Context $context
+	 * @param \Magento\Backend\Block\Context $context
 	 * @param \Magento\Framework\View\Page\Config $pageConfig
 	 * @param \Magento\Framework\App\Config\ScopeConfigInterface $config
 	 */
 	public function __construct(
-		\Magento\Backend\Block\Template\Context $context
+		\Magento\Backend\Block\Context $context
 		,\Magento\Framework\View\Page\Config $pageConfig
 		,\Magento\Framework\App\Config\ScopeConfigInterface $config
 	) {
 		$pageConfig->setMetadata('google-signin-client_id',
-			$config->getValue('df_login/google/client_id')
+			$config->getValue('dfe_login/google/client_id')
 		);
 		parent::__construct($context);
 	}

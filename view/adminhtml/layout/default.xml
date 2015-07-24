@@ -3,16 +3,13 @@
 	xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
 	layout='admin-login' xsi:noNamespaceSchemaLocation='../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd'>
 	<head>
-		<script src='Dfe_Login::main.js' defer="defer"/>
-		<css src='Dfe_Login::main.css'/>
+		<script src='Dfe_Login::signOut.js' defer="defer"/>
 	</head>
 	<body>
-		<referenceContainer name='form.buttons'>
+		<referenceContainer name='root'>
 			<block
-				class='Dfe\Login\Block\Backend\Template'
-				name='Dfe_Login_Backend_Buttons'
-				template='buttons.phtml'
-				after='adminhtml_auth_login_buttons'
+				class='Dfe\Login\Block\Backend\Metadata'
+				name='Dfe_Login_Block_Backend_Metadata'
 			/>
 		</referenceContainer>
 	</body>
