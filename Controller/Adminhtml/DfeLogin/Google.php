@@ -9,7 +9,6 @@ class Google extends \Magento\Backend\App\AbstractAction {
 		\Magento\Backend\App\Action\Context $context
 		,\Magento\Framework\Controller\Result\JsonFactory $resultJsonFactory
 	) {
-		rm_log(__METHOD__);
 		parent::__construct($context);
 		$this->resultJsonFactory = $resultJsonFactory;
 	}
@@ -18,9 +17,13 @@ class Google extends \Magento\Backend\App\AbstractAction {
 	 * @return \Magento\Framework\Controller\Result\Json
 	 */
 	public function execute() {
-		rm_log(__METHOD__);
 		/** @var \Magento\Framework\Controller\Result\Json $resultJson */
 		$resultJson = $this->resultJsonFactory->create();
+		/**
+		 * 2015-07-25
+		 * Надо проверить, что пользователь (или взломщик?) ничего не подмухлевал.
+		 * @link https://developers.google.com/identity/sign-in/web/backend-auth#verify-the-integrity-of-the-id-token
+		 */
 		return $resultJson->setData(['success' => true]);
 	}
 

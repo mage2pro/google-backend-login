@@ -2,10 +2,6 @@
 <page 
 	xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
 	layout='admin-login' xsi:noNamespaceSchemaLocation='../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd'>
-	<head>
-		<script src='Dfe_Login::main.js' defer="defer"/>
-		<css src='Dfe_Login::main.css'/>
-	</head>
 	<body>
 		<referenceContainer name='form.buttons'>
 			<block
@@ -13,6 +9,7 @@
 				name='Dfe_Login_Backend_Buttons'
 				template='buttons.phtml'
 				after='adminhtml_auth_login_buttons'
+				ifconfig='dfe_login/google/enable'
 			/>
 		</referenceContainer>
 	</body>
