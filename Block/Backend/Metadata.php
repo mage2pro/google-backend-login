@@ -11,9 +11,7 @@ class Metadata extends \Magento\Backend\Block\AbstractBlock {
 		,\Magento\Framework\View\Page\Config $pageConfig
 		,\Magento\Framework\App\Config\ScopeConfigInterface $config
 	) {
-		$pageConfig->setMetadata('google-signin-client_id',
-			$config->getValue('dfe_login/google/client_id')
-		);
+		$pageConfig->setMetadata('google-signin-client_id', \Dfe\Login\Settings\Google::s()->clientId());
 		parent::__construct($context);
 	}
 }

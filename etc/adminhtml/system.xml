@@ -59,21 +59,7 @@
                     showInStore='1'
                 >
                     <label>Client ID</label>
-                    <comment><![CDATA[]]></comment>
-                    <depends><field id='enable'>1</field></depends>
-                </field>
-                <field
-                    id='client_secret'
-                    translate='label'
-                    type='obscure'
-                    sortOrder='3'
-                    showInDefault='1'
-                    showInWebsite='1'
-                    showInStore='1'
-                >
-                    <label>Client secret</label>
-                    <comment><![CDATA[]]></comment>
-                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                    <comment><![CDATA[<a href="https://developers.google.com/console/help/#generatingoauth2">how to get it?</a>]]></comment>
                     <depends><field id='enable'>1</field></depends>
                 </field>
             </group>

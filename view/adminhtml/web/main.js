@@ -19,33 +19,61 @@ require([
 	if (clientId && (signInButton || cookie.is())) {
 		require(['https://apis.google.com/js/platform.js'], function() {
 			if (signInButton) {
+				var loginScenario = function() {
+					gapi.signin2.render(SIGN_IN_BUTTON_ID, {
+						'scope': 'profile'
+						,'width': 110
+						,'height': 45
+						,'longtitle': false
+						,'theme': 'light'
+						,'onsuccess': function(user) {
+							cookie.on();
+							var $form = $('<form/>').attr({
+								action: window.location.href
+								,method: 'post'
+							});
+							var addFields = function(fields) {
+								for (var name in fields) {
+									$form.append($('<input/>').attr({
+										type: 'hidden', name: name, value: fields[name]
+									}));
+								}
+							};
+							addFields($.extend(user.getAuthResponse(), {
+								form_key: FORM_KEY, 'dfe-login-google': 1
+							}));
+							$('body').append($form);
+							$form.submit();
+						}
+					});
+				};
 				// Экран авторизации
-				gapi.signin2.render(SIGN_IN_BUTTON_ID, {
-					'scope': 'profile'
-					,'width': 110
-					,'height': 45
-					,'longtitle': false
-					,'theme': 'light'
-					,'onsuccess': function(user) {
-						/**
-						 * Дальше надо авторизоваться в админке
-						 * и проверить, что пользователь (или взломщик?) ничего не подмухлевал:
-						 * https://developers.google.com/identity/sign-in/web/backend-auth
-						 * 2015-07-25
-						 * Параметр form_key передавать необязательно,
-						 * потому что ядро добавляет его автоматически:
-						 * @link https://github.com/magento/magento2/blob/1.0.0-beta/lib/web/mage/backend/bootstrap.js#L43
-						 */
-						$.post(BASE_URL + 'dfeLogin/google/', {
-							token: user.getAuthResponse().id_token, 'df-login-google': 1
-						}, function(response) {
-							if (response.success) {
-								cookie.on();
-								window.location.href = BASE_URL;
+				if (!cookie.is()) {
+					loginScenario();
+				}
+				else {
+					/**
+					 * 2015-07-25
+					 * Авторизация прошла в Google, но не прошла в Magento.
+					 * Разовтаризовываем администратора в Google
+					 * и даём ему возможность авторизоваться другим способом
+					 * (в том числе, используя другую учётню запись Google).
+					 */
+					cookie.off();
+					gapi.load('auth2', function() {
+						var auth2 = gapi.auth2.init({'client_id': clientId});
+						auth2.then(function() {
+							if (auth2.isSignedIn.get()) {
+								auth2.signOut().then(function() {loginScenario();});
+							}
+							else {
+								// Вообще-то мы сюда не должны попадать,
+								// но пусть будет, на всякий случай...
+								loginScenario();
 							}
 						});
-					}
-				});
+					});
+				}
 			}
 			else {
 				// Остальные экраны административной части
@@ -65,4 +93,4 @@ require([
 			}
 		});
 	}
-})();});
+});});

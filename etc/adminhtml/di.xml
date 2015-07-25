@@ -14,8 +14,8 @@
 	-->
 	<type name='Magento\Backend\App\AbstractAction'>
 		<plugin
-			name='Dfe\Login\Backend\AbstractActionPlugin'
-			type='Dfe\Login\Backend\AbstractActionPlugin'
+			name='Dfe\Login\Backend\OAuth'
+			type='Dfe\Login\Backend\OAuth'
 			sortOrder='99'
 		/>
  </type>
