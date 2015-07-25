@@ -7,5 +7,5 @@
 		,"magento/magento-composer-installer": "*"
 		,"google/apiclient": "1.0.*@beta"
 	},
-	"extra": {"map": [["*", "Dfe/Login"]]}
+	"extra": {"map": [["*", "Dfe/Login"]], "magento-force": true}
 }
