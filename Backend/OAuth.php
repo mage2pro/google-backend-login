@@ -27,7 +27,7 @@ class OAuth {
 		/** @var string|null $token */
 		$token = $request->getParam('id_token');
 		if ($isOAuthLogin && !$this->_auth->isLoggedIn() && $token) {
-			/** @link https://developers.google.com/identity/sign-in/web/backend-auth */
+			/** https://developers.google.com/identity/sign-in/web/backend-auth */
 			/** @var string $json */
 			$json = file_get_contents("https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=$token");
 			if ($json) {
@@ -42,7 +42,7 @@ class OAuth {
 					 *
 					 * Говоря простым языком, нам надо убедиться,
 					 * что админгистратор авторизован именно в нашем приложении, а не в каком-то ещё.
-					 * @link https://developers.google.com/identity/sign-in/web/backend-auth#verify-the-integrity-of-the-id-token
+					 * https://developers.google.com/identity/sign-in/web/backend-auth#verify-the-integrity-of-the-id-token
 					 */
 					/** @var string $clientId */
 					$clientId = df_a($googleResponse, 'aud');
