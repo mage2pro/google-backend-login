@@ -53,6 +53,6 @@ class OAuth {
 				}
 			}
 		}
-		return array($request);
+		return [$request];
 	}
 }

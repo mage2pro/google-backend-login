@@ -3,7 +3,14 @@
 	xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
 	layout='admin-login' xsi:noNamespaceSchemaLocation='../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd'>
 	<head>
-		<script src='Dfe_Login::main.js' defer="defer"/>
+		<!--
+			2015-09-02
+			На текущий момент ядро никак не использует возможность defer,
+			но она прекрасно работает:
+			выполнение нашего скрипта замораживается до окончания загрузки страницы.
+            http://www.w3schools.com/tags/att_script_defer.asp
+		-->
+		<script src='Dfe_Login::main.js' defer='defer'/>
 		<css src='Dfe_Login::main.css'/>
 	</head>
 	<body>
