@@ -13,11 +13,16 @@
         <tab id='_df' translate='label' sortOrder='-100'>
             <label>Mage2.PRO</label>
         </tab>
+        <!--
+            2015-09-25
+            Первые 2 цифры sortOrder соответствуют порядковому номеру первой буквы модуля
+            в английском алфавите: https://en.wikipedia.org/wiki/English_alphabet
+        -->
         <section
             id='dfe_login'
             translate='label'
             type='text'
-            sortOrder='100'
+            sortOrder='1200'
             showInDefault='1'
             showInWebsite='1'
             showInStore='1'
