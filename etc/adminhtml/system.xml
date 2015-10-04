@@ -22,7 +22,7 @@
             id='dfe_login'
             translate='label'
             type='text'
-            sortOrder='1200'
+            sortOrder='120'
             showInDefault='1'
             showInWebsite='1'
             showInStore='1'
@@ -30,17 +30,26 @@
             <tab>_df</tab>
             <label>Login</label>
             <class>separator-top</class>
+            <!--
+                2015-10-05
+                https://mage2.pro/t/114
+            -->
             <resource>Dfe_Login::config</resource>
+            <!--
+                2015-09-25
+                Первые 2 цифры sortOrder соответствуют порядковому номеру первой буквы модуля
+                в английском алфавите: https://en.wikipedia.org/wiki/English_alphabet
+            -->
             <group
                 id='google'
                 translate='label'
                 type='text'
-                sortOrder='100'
+                sortOrder='70'
                 showInDefault='1'
                 showInWebsite='1'
                 showInStore='1'
             >
-                <label>Google OAuth 2.0</label>
+                <label>Google</label>
                 <field
                     id='enable'
                     translate='label'
