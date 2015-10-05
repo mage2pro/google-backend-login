@@ -22,19 +22,19 @@
             id='dfe_login'
             translate='label'
             type='text'
-            sortOrder='120'
+            sortOrder='70'
             showInDefault='1'
             showInWebsite='1'
             showInStore='1'
         >
             <tab>_df</tab>
-            <label>Login</label>
+            <label>Google</label>
             <class>separator-top</class>
             <!--
                 2015-10-05
                 https://mage2.pro/t/114
             -->
-            <resource>Dfe_Login::config</resource>
+            <resource>Dfe_Google::config</resource>
             <!--
                 2015-09-25
                 Первые 2 цифры sortOrder соответствуют порядковому номеру первой буквы модуля
@@ -49,7 +49,7 @@
                 showInWebsite='1'
                 showInStore='1'
             >
-                <label>Google</label>
+                <label>Backend login with Google Account</label>
                 <field
                     id='enable'
                     translate='label'
