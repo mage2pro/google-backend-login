@@ -1,5 +1,5 @@
 {
-	"name": "dfe/login"
+	"name": "dfe/google"
 	,"type": "magento2-module"
 	,"require": {
 		"php": ">=5.5.0"
@@ -8,5 +8,5 @@
 		,"df/backend": "dev-master"
 		,"df/user": "dev-master"
 	},
-	"extra": {"map": [["*", "Dfe/Login"]]}
+	"extra": {"map": [["*", "Dfe/Google"]]}
 }

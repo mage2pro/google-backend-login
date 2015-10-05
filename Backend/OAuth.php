@@ -1,5 +1,5 @@
 <?php
-namespace Dfe\Login\Backend;
+namespace Dfe\Google\Backend;
 class OAuth {
 	/**
 	 * @param \Df\Backend\Model\Auth $auth
@@ -23,7 +23,7 @@ class OAuth {
 		,\Magento\Framework\App\RequestInterface $request
 	) {
 		/** @var bool|null $isOAuthLogin */
-		$isOAuthLogin = $request->getParam('dfe-login-google');
+		$isOAuthLogin = $request->getParam('dfe-google-login');
 		/** @var string|null $token */
 		$token = $request->getParam('id_token');
 		if ($isOAuthLogin && !$this->_auth->isLoggedIn() && $token) {
@@ -46,7 +46,7 @@ class OAuth {
 					 */
 					/** @var string $clientId */
 					$clientId = df_a($googleResponse, 'aud');
-					$expectedClientId = \Dfe\Login\Settings\Google::s()->clientId();
+					$expectedClientId = \Dfe\Google\Settings\Login::s()->clientId();
 					if ($email && $clientId === $expectedClientId) {
 						$this->_auth->loginByEmail($email);
 					}

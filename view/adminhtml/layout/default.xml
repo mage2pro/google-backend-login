@@ -10,15 +10,15 @@
 			выполнение нашего скрипта замораживается до окончания загрузки страницы.
             http://www.w3schools.com/tags/att_script_defer.asp
 		-->
-		<script src='Dfe_Login::main.js' defer='defer'/>
-		<css src='Dfe_Login::main.css'/>
+		<script src='Dfe_Google::main.js' defer='defer'/>
+		<css src='Dfe_Google::main.css'/>
 	</head>
 	<body>
 		<referenceContainer name='root'>
 			<block
-				class='Dfe\Login\Block\Backend\Metadata'
-				name='Dfe_Login_Block_Backend_Metadata'
-				ifconfig='dfe_login/google/enable'
+				class='Dfe\Google\Block\Backend\Metadata'
+				name='Dfe_Google_Block_Backend_Metadata'
+				ifconfig='dfe_google/login/enable'
 			/>
 		</referenceContainer>
 	</body>

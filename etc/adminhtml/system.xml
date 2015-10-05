@@ -19,7 +19,7 @@
             в английском алфавите: https://en.wikipedia.org/wiki/English_alphabet
         -->
         <section
-            id='dfe_login'
+            id='dfe_google'
             translate='label'
             type='text'
             sortOrder='70'
@@ -41,10 +41,10 @@
                 в английском алфавите: https://en.wikipedia.org/wiki/English_alphabet
             -->
             <group
-                id='google'
+                id='login'
                 translate='label'
                 type='text'
-                sortOrder='70'
+                sortOrder='120'
                 showInDefault='1'
                 showInWebsite='1'
                 showInStore='1'

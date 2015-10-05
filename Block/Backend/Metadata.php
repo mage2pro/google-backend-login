@@ -1,5 +1,5 @@
 <?php
-namespace Dfe\Login\Block\Backend;
+namespace Dfe\Google\Block\Backend;
 class Metadata extends \Magento\Backend\Block\AbstractBlock {
 	/**
 	 * @param \Magento\Backend\Block\Context $context
@@ -11,7 +11,7 @@ class Metadata extends \Magento\Backend\Block\AbstractBlock {
 		,\Magento\Framework\View\Page\Config $pageConfig
 		,\Magento\Framework\App\Config\ScopeConfigInterface $config
 	) {
-		$pageConfig->setMetadata('google-signin-client_id', \Dfe\Login\Settings\Google::s()->clientId());
+		$pageConfig->setMetadata('google-signin-client_id', \Dfe\Google\Settings\Login::s()->clientId());
 		parent::__construct($context);
 	}
 }

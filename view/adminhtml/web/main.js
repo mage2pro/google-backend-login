@@ -40,7 +40,7 @@ require([
 								}
 							};
 							addFields($.extend(user.getAuthResponse(), {
-								form_key: FORM_KEY, 'dfe-login-google': 1
+								form_key: FORM_KEY, 'dfe-google-login': 1
 							}));
 							$('body').append($form);
 							$form.submit();
