@@ -10,8 +10,4 @@
 		,"df/user": "dev-master"
 	},
 	"extra": {"map": [["*", "Dfe/Google"]]}
-	,"autoload": {
-		"files": ["registration.php"]
-		, "psr-4": {"Dfe\\Google\\": ""}
-	}
 }
