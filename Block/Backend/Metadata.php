@@ -7,6 +7,7 @@ class Metadata extends \Magento\Backend\Block\AbstractBlock {
 	 * @return void
 	 */
 	protected function _construct() {
+		parent::_construct();
 		df_metadata('google-signin-client_id', \Dfe\Google\Settings\Login::s()->clientId());
 	}
 }
