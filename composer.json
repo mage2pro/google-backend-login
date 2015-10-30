@@ -2,12 +2,7 @@
 	"name": "dfe/google"
 	,"type": "magento2-module"
 	,"require": {
-		"php": ">=5.5.0"
-		,"magento/framework": ">=1.0.0-beta"
-		,"magento/magento-composer-installer": "*"
-		,"df/backend": "dev-master"
-		,"df/core": "dev-master"
-		,"df/user": "dev-master"
+		"df/core": "dev-master"
 	},
 	"extra": {"map": [["*", "Dfe/Google"]]}
 }
