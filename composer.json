@@ -1,6 +1,15 @@
 {
 	"name": "dfe/google"
+	,"description": "«Backend Login with Google Account» extension"
 	,"type": "magento2-module"
+	,"homepage": "https://mage2.pro/t/46"
+	,"license": "proprietary"
+	,"authors": [{
+		"name": "Dmitry Fedyuk",
+		"email": "admin@mage2.pro",
+		"homepage": "https://mage2.pro/users/dmitry_fedyuk",
+		"role": "Developer"
+	}]
 	,"require": {
 		"df/core": "dev-master"
 	},
