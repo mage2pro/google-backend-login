@@ -10,8 +10,6 @@
 		"homepage": "https://mage2.pro/users/dmitry_fedyuk",
 		"role": "Developer"
 	}]
-	,"require": {
-		"df/all": "dev-master"
-	},
-	"extra": {"map": [["*", "Dfe/Google"]]}
+	,"require": {"df/all": "dev-master"}
+	,"extra": {"map": [["*", "Dfe/Google"]]}
 }
