@@ -15,14 +15,16 @@
         </tab>
         <!--
             2015-09-25
-            Первые 2 цифры sortOrder соответствуют порядковому номеру первой буквы модуля
-            в английском алфавите: https://en.wikipedia.org/wiki/English_alphabet
+            Первые 2 цифры sortOrder соответствуют порядковому номеру в английском алфавите
+            первой буквы имени модуля: https://en.wikipedia.org/wiki/English_alphabet
+            Вторые 2 цифры аналогично соответствуют порядковому номеру 2-й буквы имени модуля.
+            5-я цифра позволяет упорядочивать модули, чьи имена совпадают по первым 2-м буквам.
         -->
         <section
             id='dfe_google'
             translate='label'
             type='text'
-            sortOrder='70'
+            sortOrder='70150'
             showInDefault='1'
             showInWebsite='1'
             showInStore='1'
