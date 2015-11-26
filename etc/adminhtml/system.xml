@@ -13,6 +13,52 @@
         <tab id='_df' translate='label' sortOrder='-100'>
             <label>Mage2.PRO</label>
         </tab>
+		<section
+			id='dfe_backend'
+			translate='label'
+			type='text'
+			showInDefault='1'
+			showInWebsite='1'
+			showInStore='1'
+		>
+			<tab>_df</tab>
+			<label>Backend</label>
+			<class>separator-top</class>
+			<!--
+			2015-10-05
+			https://mage2.pro/t/114
+			-->
+			<resource>Df_Backend::config</resource>
+			<!--
+				2015-09-25
+				Первые 2 цифры sortOrder соответствуют порядковому номеру первой буквы модуля
+				в английском алфавите: https://en.wikipedia.org/wiki/English_alphabet
+			-->
+			<group
+				id='login'
+				translate='label'
+				type='text'
+				sortOrder='12'
+				showInDefault='1'
+				showInWebsite='0'
+				showInStore='0'
+			>
+				<label>Login</label>
+				<field
+					id='google'
+					translate='label'
+					type='select'
+					sortOrder='1'
+					showInDefault='1'
+					showInWebsite='0'
+					showInStore='0'
+				>
+					<label>Allow Login with Google Account?</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<comment><![CDATA[<a href='https://mage2.pro/t/46'>documentation</a>]]></comment>
+				</field>
+			</group>
+		</section>
         <section
             id='dfe_google'
             translate='label'
@@ -44,19 +90,6 @@
                 showInStore='1'
             >
                 <label>Backend login with Google Account</label>
-                <field
-                    id='enable'
-                    translate='label'
-                    type='select'
-                    sortOrder='1'
-                    showInDefault='1'
-                    showInWebsite='1'
-                    showInStore='1'
-                >
-                    <label>Enable?</label>
-                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-                    <comment><![CDATA[]]></comment>
-                </field>
                 <field
                     id='client_id'
                     translate='label'

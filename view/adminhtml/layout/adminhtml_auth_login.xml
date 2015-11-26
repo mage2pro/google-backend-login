@@ -27,7 +27,7 @@
 				name='Dfe_Google_Backend_Buttons'
 				template='buttons.phtml'
 				after='adminhtml_auth_login_buttons'
-				ifconfig='dfe_google/login/enable'
+				ifconfig='dfe_backend/login/google'
 			/>
 		</referenceContainer>
 	</body>
