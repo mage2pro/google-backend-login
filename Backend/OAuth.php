@@ -45,7 +45,7 @@ class OAuth {
 					 */
 					/** @var string $clientId */
 					$clientId = df_a($googleResponse, 'aud');
-					$expectedClientId = \Dfe\Google\Settings\Login::s()->clientId();
+					$expectedClientId = \Df\Api\Settings\Google::s()->clientId();
 					if ($email && $clientId === $expectedClientId) {
 						$this->_auth->loginByEmail($email);
 					}
