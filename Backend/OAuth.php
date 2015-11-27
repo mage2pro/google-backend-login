@@ -28,7 +28,17 @@ class OAuth {
 		if ($isOAuthLogin && !$this->_auth->isLoggedIn() && $token) {
 			/** https://developers.google.com/identity/sign-in/web/backend-auth */
 			/** @var string $json */
-			$json = file_get_contents("https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=$token");
+			/**
+			 * 2015-11-27
+			 * Обратите внимание, что для использования @uses file_get_contents
+			 * с адресами https требуется расширение php_openssl интерпретатора PHP,
+			 * однако оно является системным требованием Magento 2:
+			 * http://devdocs.magento.com/guides/v2.0/install-gde/system-requirements.html#required-php-extensions
+			 * Поэтому мы вправе использовать здесь @uses file_get_contents
+			 */
+			$json = df_http_get('https://www.googleapis.com/oauth2/v3/tokeninfo', [
+				'id_token' => $token
+			]);
 			if ($json) {
 				$googleResponse = json_decode($json, $assoc = true);
 				if ($googleResponse) {
