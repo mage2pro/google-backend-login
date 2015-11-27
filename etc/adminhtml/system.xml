@@ -14,58 +14,7 @@
             <label>Mage2.PRO</label>
         </tab>
 		<section
-			id='dfe_api'
-			translate='label'
-			type='text'
-			showInDefault='1'
-			showInWebsite='1'
-			showInStore='1'
-		>
-			<tab>_df</tab>
-			<label>APIs</label>
-			<class>separator-top</class>
-			<!--
-				2015-10-05
-				https://mage2.pro/t/114
-			-->
-			<resource>Dfe_API::config</resource>
-			<!--
-				2015-09-25
-				Первые 2 цифры sortOrder соответствуют порядковому номеру первой буквы модуля
-				в английском алфавите: https://en.wikipedia.org/wiki/English_alphabet
-			-->
-			<group
-				id='google'
-				translate='label'
-				type='text'
-				sortOrder='120'
-				showInDefault='1'
-				showInWebsite='1'
-				showInStore='1'
-			>
-			<label>Google</label>
-				<!--
-				 	2015-11-27
-				 	Этот параметр не является секретным, поэтому делать его obscure не нужно.
-				 	Защита от несанционированного использования этого идентфикатора
-				 	достигается проверкой домена на стороне Google: https://mage2.pro/t/261
-				-->
-				<field
-					id='client_id'
-					translate='label'
-					type='text'
-					sortOrder='2'
-					showInDefault='1'
-					showInWebsite='1'
-					showInStore='1'
-				>
-					<label>OAuth 2.0 Client ID </label>
-					<comment><![CDATA[<a href="https://mage2.pro/t/261">how to get it?</a>]]></comment>
-				</field>
-			</group>
-		</section>
-		<section
-			id='dfe_backend'
+			id='df_backend'
 			translate='label'
 			type='text'
 			showInDefault='1'

@@ -18,7 +18,7 @@
 			<block
 				class='Dfe\Google\Block\Backend\Metadata'
 				name='Dfe_Google_Block_Backend_Metadata'
-				ifconfig='dfe_backend/login/google'
+				ifconfig='df_backend/login/google'
 			/>
 		</referenceContainer>
 	</body>
