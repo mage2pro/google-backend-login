@@ -1,5 +1,7 @@
 <?php
 namespace Dfe\Google\Backend;
+use Magento\Backend\App\AbstractAction;
+use Magento\Framework\App\RequestInterface;
 class OAuth {
 	/**
 	 * @param \Df\Backend\Model\Auth $auth
@@ -14,14 +16,11 @@ class OAuth {
 	 * app/code/Magento/Backend/etc/adminhtml/di.xml
 	 * Он выполняет стандартную авторизацию в административной части и имеет вес 100.
 	 * Наш же имеет вес 99 и выполняется раньше стандартного.
-	 * @param \Magento\Backend\App\AbstractAction $subject
-	 * @param \Magento\Framework\App\RequestInterface $request
-	 * @return \Magento\Framework\App\RequestInterface $request
+	 * @param AbstractAction $subject
+	 * @param RequestInterface $request
+	 * @return RequestInterface $request
 	 */
-	public function beforeDispatch(
-		\Magento\Backend\App\AbstractAction $subject
-		,\Magento\Framework\App\RequestInterface $request
-	) {
+	public function beforeDispatch(AbstractAction $subject, RequestInterface $request) {
 		/** @var bool|null $isOAuthLogin */
 		$isOAuthLogin = $request->getParam('dfe-google-login');
 		/** @var string|null $token */
