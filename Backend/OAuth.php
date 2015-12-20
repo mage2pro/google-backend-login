@@ -40,7 +40,7 @@ class OAuth {
 				'id_token' => $token
 			]);
 			if ($json) {
-				$googleResponse = json_decode($json, $assoc = true);
+				$googleResponse = df_json_decode($json);
 				if ($googleResponse) {
 					/** @var string $email */
 					$email = df_a($googleResponse, 'email');
