@@ -47,14 +47,14 @@
 				<field
 					id='google'
 					translate='label'
-					type='select'
+					type='Df\Framework\Data\Form\Element\Checkbox'
 					sortOrder='1'
 					showInDefault='1'
 					showInWebsite='0'
 					showInStore='0'
 				>
 					<label>Allow Login with Google Account?</label>
-					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<backend_model>Df\Config\Backend\Checkbox</backend_model>
 					<comment><![CDATA[<a href='https://mage2.pro/t/46'>documentation</a>]]></comment>
 				</field>
 			</group>
