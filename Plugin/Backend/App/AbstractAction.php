@@ -1,31 +1,26 @@
 <?php
-namespace Dfe\Google\Backend;
-use Magento\Backend\App\AbstractAction;
+namespace Dfe\Google\Plugin\Backend\App;
+use Df\Api\Settings\Google;
+use Magento\Backend\App\AbstractAction as Sb;
 use Magento\Framework\App\RequestInterface;
-class OAuth {
-	/**
-	 * @param \Df\Backend\Model\Auth $auth
-	 */
-	public function __construct(\Df\Backend\Model\Auth $auth) {$this->_auth = $auth;}
-
+class AbstractAction {
 	/**
 	 * 2015-07-23
-	 * Цель метода —
-	 * авторизация в административной части посредством OAuth.
+	 * Цель метода — авторизация в административной части посредством OAuth.
 	 * Обратите внимание, что в ядре Magento уже есть плагин для данного класса:
 	 * app/code/Magento/Backend/etc/adminhtml/di.xml
 	 * Он выполняет стандартную авторизацию в административной части и имеет вес 100.
 	 * Наш же имеет вес 99 и выполняется раньше стандартного.
-	 * @param AbstractAction $subject
+	 * @param Sb $sb
 	 * @param RequestInterface $request
-	 * @return RequestInterface $request
+	 * @return void
 	 */
-	public function beforeDispatch(AbstractAction $subject, RequestInterface $request) {
+	public function beforeDispatch(Sb $sb, RequestInterface $request) {
 		/** @var bool|null $isOAuthLogin */
 		$isOAuthLogin = $request->getParam('dfe-google-login');
 		/** @var string|null $token */
 		$token = $request->getParam('id_token');
-		if ($isOAuthLogin && !$this->_auth->isLoggedIn() && $token) {
+		if ($isOAuthLogin && !df_backend_auth()->isLoggedIn() && $token) {
 			/** https://developers.google.com/identity/sign-in/web/backend-auth */
 			/** @var string $json */
 			/**
@@ -55,13 +50,13 @@ class OAuth {
 					 */
 					/** @var string $clientId */
 					$clientId = df_a($googleResponse, 'aud');
-					$expectedClientId = \Df\Api\Settings\Google::s()->clientId();
+					/** @var string $expectedClientId */
+					$expectedClientId = Google::s()->clientId();
 					if ($email && $clientId === $expectedClientId) {
-						$this->_auth->loginByEmail($email);
+						df_backend_auth()->loginByEmail($email);
 					}
 				}
 			}
 		}
-		return [$request];
 	}
 }
