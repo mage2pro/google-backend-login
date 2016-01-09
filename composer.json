@@ -1,6 +1,6 @@
 {
 	"name": "dfe/google"
-	,"description": "«Backend Login with Google Account» extension"
+	,"description": "The «Backend Login with Google Account» extension."
 	,"type": "magento2-module"
 	,"homepage": "https://mage2.pro/t/46"
 	,"license": "proprietary"
