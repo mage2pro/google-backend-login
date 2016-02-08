@@ -4,15 +4,6 @@
     xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd"
 >
     <system>
-        <!--
-            2015-07-10
-            Минимальная длина идентификатора tab — 3 символа:
-            https://github.com/magento/magento2/blob/1.0.0-beta/app/code/Magento/Config/etc/system_file.xsd#L405
-            Поэтому ставим символ подчёркивания вначале.
-        -->
-        <tab id='_df' translate='label' sortOrder='-100'>
-            <label>Mage2.PRO</label>
-        </tab>
 		<section
 			id='df_backend'
 			translate='label'
