@@ -38,7 +38,7 @@ class AbstractAction {
 				$googleResponse = df_json_decode($json);
 				if ($googleResponse) {
 					/** @var string $email */
-					$email = df_a($googleResponse, 'email');
+					$email = dfa($googleResponse, 'email');
 					/**
 					 * The value of aud in the ID token is equal to one of your app's client IDs.
 					 * This check is necessary to prevent ID tokens issued to a malicious app
@@ -49,7 +49,7 @@ class AbstractAction {
 					 * https://developers.google.com/identity/sign-in/web/backend-auth#verify-the-integrity-of-the-id-token
 					 */
 					/** @var string $clientId */
-					$clientId = df_a($googleResponse, 'aud');
+					$clientId = dfa($googleResponse, 'aud');
 					/** @var string $expectedClientId */
 					$expectedClientId = Google::s()->clientId();
 					if ($email && $clientId === $expectedClientId) {
