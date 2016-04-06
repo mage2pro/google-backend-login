@@ -11,5 +11,5 @@
 		"role": "Developer"
 	}]
 	,"require": {"mage2pro/core": "*"}
-	,"autoload": {"files": ["registration.php"], "psr-4": {"Dfe\\Google": ""}}
+	,"autoload": {"files": ["registration.php"], "psr-4": {"Dfe\\Google\\": ""}}
 }
