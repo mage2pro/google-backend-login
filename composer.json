@@ -10,6 +10,9 @@
 		"homepage": "https://mage2.pro/users/dmitry_fedyuk",
 		"role": "Developer"
 	}]
-	,"require": {"mage2pro/core": "*"}
+	,"require": {
+		"mage2pro/core": "*"
+		,"mage2pro/google": "*"
+	}
 	,"autoload": {"files": ["registration.php"], "psr-4": {"Dfe\\GoogleBackendLogin\\": ""}}
 }

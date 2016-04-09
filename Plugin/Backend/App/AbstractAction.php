@@ -1,6 +1,6 @@
 <?php
 namespace Dfe\GoogleBackendLogin\Plugin\Backend\App;
-use Df\Api\Settings\Google;
+use Df\Google\Settings as S;
 use Magento\Backend\App\AbstractAction as Sb;
 use Magento\Framework\App\RequestInterface;
 class AbstractAction {
@@ -51,7 +51,7 @@ class AbstractAction {
 					/** @var string $clientId */
 					$clientId = dfa($googleResponse, 'aud');
 					/** @var string $expectedClientId */
-					$expectedClientId = Google::s()->clientId();
+					$expectedClientId = S::s()->clientId();
 					if ($email && $clientId === $expectedClientId) {
 						df_backend_auth()->loginByEmail($email);
 					}

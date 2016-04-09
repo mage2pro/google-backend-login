@@ -1,5 +1,6 @@
 <?php
 namespace Dfe\GoogleBackendLogin\Block;
+use Df\Google\Settings as S;
 class Metadata extends \Magento\Backend\Block\AbstractBlock {
 	/**
 	 * @override
@@ -8,6 +9,6 @@ class Metadata extends \Magento\Backend\Block\AbstractBlock {
 	 */
 	protected function _construct() {
 		parent::_construct();
-		df_metadata('google-signin-client_id', \Df\Api\Settings\Google::s()->clientId());
+		df_metadata('google-signin-client_id', S::s()->clientId());
 	}
 }
