@@ -1,5 +1,5 @@
 <?php
-namespace Dfe\Google\Plugin\Backend\App;
+namespace Dfe\GoogleBackendLogin\Plugin\Backend\App;
 use Df\Api\Settings\Google;
 use Magento\Backend\App\AbstractAction as Sb;
 use Magento\Framework\App\RequestInterface;

@@ -1,3 +1,3 @@
 <?php
-namespace Dfe\Google\Block\Backend;
+namespace Dfe\GoogleBackendLogin\Block;
 class Template extends \Magento\Backend\Block\Template {}

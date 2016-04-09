@@ -14,8 +14,8 @@
 	-->
 	<type name='Magento\Backend\App\AbstractAction'>
 		<plugin
-			name='Dfe\Google\Plugin\Backend\App\AbstractAction'
-			type='Dfe\Google\Plugin\Backend\App\AbstractAction'
+			name='Dfe\GoogleBackendLogin\Plugin\Backend\App\AbstractAction'
+			type='Dfe\GoogleBackendLogin\Plugin\Backend\App\AbstractAction'
 			sortOrder='99'
 		/>
  </type>

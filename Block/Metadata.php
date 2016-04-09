@@ -1,5 +1,5 @@
 <?php
-namespace Dfe\Google\Block\Backend;
+namespace Dfe\GoogleBackendLogin\Block;
 class Metadata extends \Magento\Backend\Block\AbstractBlock {
 	/**
 	 * @override

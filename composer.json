@@ -1,5 +1,5 @@
 {
-	"name": "mage2pro/google"
+	"name": "mage2pro/google-backend-login"
 	,"description": "The «Backend Login with Google Account» extension."
 	,"type": "magento2-module"
 	,"homepage": "https://mage2.pro/t/46"
@@ -11,5 +11,5 @@
 		"role": "Developer"
 	}]
 	,"require": {"mage2pro/core": "*"}
-	,"autoload": {"files": ["registration.php"], "psr-4": {"Dfe\\Google\\": ""}}
+	,"autoload": {"files": ["registration.php"], "psr-4": {"Dfe\\GoogleBackendLogin\\": ""}}
 }
