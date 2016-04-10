@@ -9,6 +9,11 @@
 		авторизация в административной части посредством OAuth.
 		Обратите внимание, что в ядре Magento уже есть плагин для данного класса:
 		app/code/Magento/Backend/etc/adminhtml/di.xml
+		https://github.com/magento/magento2/blob/052e789/app/code/Magento/Backend/etc/adminhtml/di.xml#L64-L67
+		<type name="Magento\Backend\App\AbstractAction">
+			<plugin name="adminAuthentication" type="Magento\Backend\App\Action\Plugin\Authentication" sortOrder="100" />
+			<plugin name="adminMassactionKey" type="Magento\Backend\App\Action\Plugin\MassactionKey" sortOrder="11" />
+		</type>
 		Он выполняет стандартную авторизацию в административной части и имеет вес 100.
 		Наш же имеет вес 99 и выполняется раньше стандартного.
 	-->
