@@ -1,5 +1,6 @@
 {
 	"name": "mage2pro/google-backend-login"
+	,"version": "1.0.0"
 	,"description": "The «Backend Login with Google Account» extension."
 	,"type": "magento2-module"
 	,"homepage": "https://mage2.pro/t/46"
