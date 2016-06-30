@@ -38,7 +38,7 @@
                 <field
                     id='google'
                     translate='label'
-                    type='Df\Framework\Data\Form\Element\Checkbox'
+                    type='Df\Framework\Form\Element\Checkbox'
                     sortOrder='1'
                     showInDefault='1'
                     showInWebsite='0'
