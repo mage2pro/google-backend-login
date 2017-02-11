@@ -21,7 +21,7 @@ class AbstractAction {
 	 * @param RequestInterface $request
 	 * @return void
 	 */
-	public function beforeDispatch(Sb $sb, RequestInterface $request) {
+	function beforeDispatch(Sb $sb, RequestInterface $request) {
 		/** @var bool|null $isOAuthLogin */
 		$isOAuthLogin = $request->getParam('dfe-google-login');
 		/** @var string|null $token */
