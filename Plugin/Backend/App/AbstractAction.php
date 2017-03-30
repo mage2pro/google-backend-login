@@ -19,7 +19,6 @@ class AbstractAction {
 	 * @see \Magento\Backend\App\AbstractAction::dispatch()
 	 * @param Sb $sb
 	 * @param RequestInterface $request
-	 * @return void
 	 */
 	function beforeDispatch(Sb $sb, RequestInterface $request) {
 		/** @var bool|null $isOAuthLogin */
