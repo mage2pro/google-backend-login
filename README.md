@@ -1,4 +1,4 @@
-The «**[Backend Login with Google Account](https://mage2.pro/t/46)**» extension for Magento 2.    
+The «**[Backend Login with Google Account](https://mage2.pro/c/extensions/google-backend-login)**» extension for Magento 2.    
 The extension allows you to be authenticated in your Magento 2 backend using your Google Account.
 
 [**Demo video**](https://www.youtube.com/watch?v=DrjAdd5UwEI).
@@ -21,12 +21,12 @@ If you have already bought the extension, then its installation is a **free serv
 Follow the generic [installation instruction](https://mage2.pro/t/263). 
 
 ## Support
-- [The extension's **forum** branch](https://mage2.pro/t/46).
+- [The extension's **forum** branch](https://mage2.pro/c/extensions/google-backend-login).
 - [Where and how to report a Mage2.PRO extension's issue?](https://mage2.pro/t/2034)
 - I also provide a **[generic Magento 2 support](https://mage2.pro/t/topic/755)** and [Magento 2 installation service](https://mage2.pro/t/748).
 
 ## Want to be notified about the extension's updates?
-- [Subscribe](https://mage2.pro/t/2540) to the extension's [forum branch](https://mage2.pro/t/46).
+- [Subscribe](https://mage2.pro/t/2540) to the extension's [forum branch](https://mage2.pro/c/extensions/google-backend-login).
 - Subscribe to my [Twitter](https://twitter.com/mage2_pro) and [YouTube](https://www.youtube.com/channel/UCvlDAZuj01_b92pzRi69LeQ) channels.
 
 ## Need a new feature?
