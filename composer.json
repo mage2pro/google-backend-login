@@ -13,4 +13,18 @@
 	}]
 	,"require": {"mage2pro/core": ">=2.4.19", "mage2pro/google": ">=1.0.5"}
 	,"autoload": {"files": ["registration.php"], "psr-4": {"Dfe\\GoogleBackendLogin\\": ""}}
+	,"keywords": [
+		"Authentication"
+		,"Backend"
+		,"eCommerce"
+		,"Editor"
+		,"Editor"
+		,"Google"
+		,"Google API"
+		,"Google OAuth2"
+		,"Magento"
+		,"Magento 2"
+		,"Magento extension"
+		,"OAuth2"
+	]
 }
