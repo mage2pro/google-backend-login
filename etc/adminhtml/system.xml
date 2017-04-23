@@ -15,10 +15,7 @@
 			<tab>_df</tab>
 			<label>Backend</label>
 			<class>separator-top</class>
-<!--
-2015-10-05
-https://mage2.pro/t/114
--->
+			<!-- 2015-10-05 https://mage2.pro/t/114 -->
 			<resource>Df_Backend::config</resource>
 <!--
 2015-09-25
