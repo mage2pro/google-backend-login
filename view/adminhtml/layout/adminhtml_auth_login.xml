@@ -3,23 +3,25 @@
 	xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
 	layout='admin-login' xsi:noNamespaceSchemaLocation='urn:magento:framework:View/Layout/etc/page_configuration.xsd'>
 	<body>
-		<!--
-			2015-09-02
-			Сегодня заметил, что в текущей версии Magento 2
-			ядро перестало загружать блок Magento\RequireJs\Block\Html\Head\Config
-			для данного (adminhtml_auth_login) типа страниц,
-			и из-за этого RequireJS работает неправильно, и мои скрипты не загружаются.
-			Поэтому теперь добавил этот блок вручную.
+<!--
+2015-09-02
+Сегодня заметил, что в текущей версии Magento 2
+ядро перестало загружать блок Magento\RequireJs\Block\Html\Head\Config
+для данного (adminhtml_auth_login) типа страниц,
+и из-за этого RequireJS работает неправильно, и мои скрипты не загружаются.
+Поэтому теперь добавил этот блок вручную.
 
-			Ядро добавляет блок Magento\RequireJs\Block\Html\Head\Config
-			в базовом макете Magento/Backend/view/adminhtml/layout/default.xml:
-			https://github.com/magento/magento2/blob/81d0b1b1446ca27ae99ec11b5cce86dbac0f7334/app/code/Magento/Backend/view/adminhtml/layout/default.xml#L71
-			<referenceContainer name="after.body.start">
-				<block class="Magento\RequireJs\Block\Html\Head\Config" name="requirejs-config"/>
-			</referenceContainer>
-			Однако родительский блок after.body.start на странице adminhtml_auth_login отсутствует,
-			и поэтому у нас стандартная инициализация не срабатывала.
-		-->
+Ядро добавляет блок Magento\RequireJs\Block\Html\Head\Config
+в базовом макете Magento/Backend/view/adminhtml/layout/default.xml:
+https://github.com/magento/magento2/blob/81d0b1b1446ca27ae99ec11b5cce86dbac0f7334/app/code/Magento/Backend/view/adminhtml/layout/default.xml#L71
+<referenceContainer name="after.body.start">
+<block class="Magento\RequireJs\Block\Html\Head\Config" name="requirejs-config"/>
+</referenceContainer>
+Однако родительский блок after.body.start на странице adminhtml_auth_login отсутствует,
+и поэтому у нас стандартная инициализация не срабатывала.
+
+2017-05-08 «How is the composite «requirejs-config.js» file added to the pages?» https://mage2.pro/t/3912
+-->
 		<block class='Magento\RequireJs\Block\Html\Head\Config' name='requirejs-config'/>
 		<referenceContainer name='form.buttons'>
 			<block
