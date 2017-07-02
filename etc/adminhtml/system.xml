@@ -7,7 +7,6 @@
 		<section
 			id='df_backend'
 			translate='label'
-			type='text'
 			showInDefault='1'
 			showInWebsite='1'
 			showInStore='1'
@@ -25,7 +24,6 @@
 			<group
 				id='login'
 				translate='label'
-				type='text'
 				sortOrder='12'
 				showInDefault='1'
 				showInWebsite='0'
