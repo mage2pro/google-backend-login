@@ -3,13 +3,11 @@
 	xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
 	xsi:noNamespaceSchemaLocation='urn:magento:framework:View/Layout/etc/page_configuration.xsd'>
 	<head>
-		<!--
-			2015-09-02
-			На текущий момент ядро никак не использует возможность defer,
-			но она прекрасно работает:
-			выполнение нашего скрипта замораживается до окончания загрузки страницы.
-            http://www.w3schools.com/tags/att_script_defer.asp
-		-->
+<!-- 2015-09-02
+На текущий момент ядро никак не использует возможность `defer`, но она прекрасно работает:
+выполнение нашего скрипта замораживается до окончания загрузки страницы.
+http://www.w3schools.com/tags/att_script_defer.asp
+-->
 		<script src='Dfe_GoogleBackendLogin::main.js' defer='defer'/>
 		<css src='Dfe_GoogleBackendLogin::main.css'/>
 	</head>
