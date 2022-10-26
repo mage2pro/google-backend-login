@@ -9,22 +9,20 @@ class AbstractAction {
 	 * Цель метода — авторизация в административной части посредством OAuth.
 	 * Обратите внимание, что в ядре Magento уже есть плагин для данного класса:
 	 * app/code/Magento/Backend/etc/adminhtml/di.xml
-		https://github.com/magento/magento2/blob/052e789/app/code/Magento/Backend/etc/adminhtml/di.xml#L64-L67
-		<type name="Magento\Backend\App\AbstractAction">
-			<plugin name="adminAuthentication" type="Magento\Backend\App\Action\Plugin\Authentication" sortOrder="100" />
-			<plugin name="adminMassactionKey" type="Magento\Backend\App\Action\Plugin\MassactionKey" sortOrder="11" />
-		</type>
+	 *	https://github.com/magento/magento2/blob/052e789/app/code/Magento/Backend/etc/adminhtml/di.xml#L64-L67
+	 *	<type name="Magento\Backend\App\AbstractAction">
+	 *		<plugin name="adminAuthentication" type="Magento\Backend\App\Action\Plugin\Authentication" sortOrder="100" />
+	 *		<plugin name="adminMassactionKey" type="Magento\Backend\App\Action\Plugin\MassactionKey" sortOrder="11" />
+	 *	</type>
 	 * Он выполняет стандартную авторизацию в административной части и имеет вес 100.
 	 * Наш же имеет вес 99 и выполняется раньше стандартного.
 	 * @see \Magento\Backend\App\AbstractAction::dispatch()
 	 * @param Sb $sb
 	 * @param RequestInterface $request
 	 */
-	function beforeDispatch(Sb $sb, RequestInterface $request) {
-		/** @var bool|null $isOAuthLogin */
-		$isOAuthLogin = $request->getParam('dfe-google-login');
-		/** @var string|null $token */
-		$token = $request->getParam('id_token');
+	function beforeDispatch(Sb $sb, RequestInterface $request):void {
+		$isOAuthLogin = $request->getParam('dfe-google-login'); /** @var bool|null $isOAuthLogin */
+		$token = $request->getParam('id_token'); /** @var string|null $token */
 		if ($isOAuthLogin && !df_backend_auth()->isLoggedIn() && $token) {
 			/** https://developers.google.com/identity/sign-in/web/backend-auth */
 			/** @var array(string => string)|null $googleResponse */
@@ -40,21 +38,16 @@ class AbstractAction {
 				'id_token' => $token
 			]);
 			if ($googleResponse) {
-				/** @var string $email */
-				$email = dfa($googleResponse, 'email');
-				/**
-				 * The value of aud in the ID token is equal to one of your app's client IDs.
-				 * This check is necessary to prevent ID tokens issued to a malicious app
-				 * being used to access data about the same user on your app's backend server.
-				 *
-				 * Говоря простым языком, нам надо убедиться,
-				 * что админгистратор авторизован именно в нашем приложении, а не в каком-то ещё.
-				 * https://developers.google.com/identity/sign-in/web/backend-auth#verify-the-integrity-of-the-id-token
-				 */
-				/** @var string $clientId */
-				$clientId = dfa($googleResponse, 'aud');
-				/** @var string $expectedClientId */
-				$expectedClientId = S::s()->clientId();
+				$email = dfa($googleResponse, 'email'); /** @var string $email */
+				# The value of aud in the ID token is equal to one of your app's client IDs.
+				# This check is necessary to prevent ID tokens issued to a malicious app
+				# being used to access data about the same user on your app's backend server.
+				#
+				# Говоря простым языком, нам надо убедиться,
+				# что админгистратор авторизован именно в нашем приложении, а не в каком-то ещё.
+				# https://developers.google.com/identity/sign-in/web/backend-auth#verify-the-integrity-of-the-id-token
+				$clientId = dfa($googleResponse, 'aud'); /** @var string $clientId */
+				$expectedClientId = S::s()->clientId(); /** @var string $expectedClientId */
 				if ($email && $clientId === $expectedClientId) {
 					df_backend_auth()->loginByEmail($email);
 				}
