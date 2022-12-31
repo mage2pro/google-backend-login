@@ -17,8 +17,6 @@ class AbstractAction {
 	 * Он выполняет стандартную авторизацию в административной части и имеет вес 100.
 	 * Наш же имеет вес 99 и выполняется раньше стандартного.
 	 * @see \Magento\Backend\App\AbstractAction::dispatch()
-	 * @param Sb $sb
-	 * @param RequestInterface $request
 	 */
 	function beforeDispatch(Sb $sb, RequestInterface $request):void {
 		$isOAuthLogin = $request->getParam('dfe-google-login'); /** @var bool|null $isOAuthLogin */
