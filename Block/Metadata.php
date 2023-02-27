@@ -1,6 +1,6 @@
 <?php
 namespace Dfe\GoogleBackendLogin\Block;
-use Df\Google\Settings as S;
+use Dfe\Google\Settings as S;
 class Metadata extends \Magento\Backend\Block\AbstractBlock {
 	/**
 	 * @override

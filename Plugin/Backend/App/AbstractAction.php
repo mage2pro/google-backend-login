@@ -1,6 +1,6 @@
 <?php
 namespace Dfe\GoogleBackendLogin\Plugin\Backend\App;
-use Df\Google\Settings as S;
+use Dfe\Google\Settings as S;
 use Magento\Backend\App\AbstractAction as Sb;
 use Magento\Framework\App\RequestInterface;
 class AbstractAction {
